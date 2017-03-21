@@ -48,17 +48,14 @@ public class RxBus {
 
     // 单例RxBus
     public static RxBus getDefault() {
-        RxBus rxBus = defaultInstance;
         if (defaultInstance == null) {
             synchronized (RxBus.class) {
-                rxBus = defaultInstance;
                 if (defaultInstance == null) {
-                    rxBus = new RxBus();
-                    defaultInstance = rxBus;
+                    defaultInstance = new RxBus();
                 }
             }
         }
-        return rxBus;
+        return defaultInstance;
     }
 
     /**
